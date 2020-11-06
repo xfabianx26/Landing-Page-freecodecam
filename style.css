@@ -6,26 +6,11 @@
 */
 
 /* Estilos generales */
-html, body{
-    height: 100%;
-}
 
-/* Modificar el modelo de cajas de CSS */
-html{
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-
-}
-/* Selector universal */
-*, *::before, *::after{
-    -webkit-box-sizing: inherit;
-            box-sizing: inherit;
-}
-/* Resetear márgenes y padding */
 *{
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
 }
 body{
     font-family: 'Open Sans', sans-serif;
@@ -42,18 +27,26 @@ header{
     background-color: green;
     /* overflow: hidden; */
 }
+#header-img{
+    float: left;
+}
+#header-img img{
+    width: 80px;
+    height: 80px;
 
-#infoContacto{
+}
+
+#nav-bar{
     float: right;
     margin-top: 20px;
     
 }
-#infoContacto i {
+#nav-bar i {
 	color: #000;
 	margin-right: 12px;
 	font-size: 2.2rem;
 }
-/* Seccion 1 */
+/* title - form */
 article > section:nth-child(1){
     background: url(https://cdn.pixabay.com/photo/2016/02/10/21/59/landscape-1192669_960_720.jpg);
     background-repeat: no-repeat ;
@@ -102,14 +95,14 @@ h1{
     color: #008000;
 }
 
-#formulario {
+#form {
 	-ms-flex-preferred-size: 30%;
 	    flex-basis: 30%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 50px;
     color: #fff;
 }
-#formulario h3{
+#form h3{
     font-size: 1.4rem;
     margin-bottom: 40px;
     text-align: center;
@@ -146,13 +139,14 @@ input[type="submit"] {
 small a {
 	color: #fff;
 }
+/*  end title - form */
 
-/* Sección 2 */
+/* section 1 */
 article section:nth-child(2){
     padding: 60px 0;
 
 }
-#seccionDos{
+#sectionOne{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -165,7 +159,7 @@ article section:nth-child(2){
             justify-content: space-around;
     text-align: center;
 }
-#seccionDos i{
+#sectionOne i{
     color: #000;
     font-size: 2.5rem;
     border: 1px solid;
@@ -184,13 +178,13 @@ article section:nth-child(2){
 }
 
 
-/* Seccion 4 */
+/* Section 2*/
 article section:nth-child(4){
     padding: 60px 0 0;
     text-align: center;
 
 }
-#seccionCuatro{
+#sectionTwo{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -200,7 +194,7 @@ article section:nth-child(4){
     margin: 50px auto;
 }
 .card {
-    margin: 20px 0.5em;
+    margin: 20px 1rem;
     -webkit-box-shadow: 2px 5px 15px #ccc9c9;
             box-shadow: 2px 5px 15px #ccc9c9;
     padding-bottom: 35px;
@@ -221,77 +215,24 @@ article section:nth-child(4){
     color: #107ba7;
     margin: 0 0.2em;
 }
-/* Seccion 5 */
-
-article > section:nth-child(5){
-    background-image: -webkit-gradient(linear, right bottom, left top, from(rgba(16,123,167,0.8)), to(rgba(16,123,167,0.8))), url(../imagenes/fondo_inferior.jpg);
-    background-image: -o-linear-gradient(right bottom, rgba(16,123,167,0.8), rgba(16,123,167,0.8)), url(../imagenes/fondo_inferior.jpg);
-    background-image: linear-gradient(to left top, rgba(16,123,167,0.8), rgba(16,123,167,0.8)), url(../imagenes/fondo_inferior.jpg);
-    background-repeat: no-repeat ;
-    background-size: cover;
-    background-position: center right;
-}
-#seccionCinco{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    height: 100%;
-    min-height: 330px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    color: #fff;
-
-}
-
-#seccionCinco h2{
-    margin-bottom: 0;
-}
-
-#seccionCinco p{
-    padding: 20px 0;
-}
-#seccionCinco a{
-    display: block;
-    background-color: #37b81e;
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 2em;
-
-}
-#seccionCinco a:hover{
-    background-color: #358d24;
-    -webkit-transform: all 0.5;
-        -ms-transform: all 0.5;
-            transform: all 0.5;
-}
 /* Pie de página */
 footer {
-    background-color: #2c2a2a;
+    background-color: #000;
     padding: 20px 0;
 }
 #pieDePaigna {
-    /* para que no se desborden cuando uso float */
+  
     
     text-align: center;
 }
 .copyright{
    
-    color: #c0bcbc;
-    padding-top: 14px;
+    color: #fff;
+    padding-top: 18px;
     
 }
 
 
-/* MEDIAS QUERIES */
-/* Aplicar los siguiente estilos cuando el tamaño del viewport sea igual o menor a 3840px */
 
 @media screen and (max-width: 3840px){
     .container{
@@ -300,9 +241,3 @@ footer {
     }
 }
 
-/* Aplicar los siguiente estilos cuando el tamaño del viewport sea igual o menor a 1920px */
-@media screen and (max-width: 1920px){
-    .container{
-        max-width: 1920px;
-    }
-}
